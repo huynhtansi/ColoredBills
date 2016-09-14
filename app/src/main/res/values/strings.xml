@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Colored Bills</string>
+
+    <string name="action_search">Search</string>
+    <string name="action_view">View Module</string>
+
+    <array name="view_mode">
+        <item>Date List</item>
+        <item>Category</item>
+        <item>Grid</item>
+    </array>
+</resources>
