@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
-
+apply plugin: 'realm-android'
 
 def getDate() {
     def date = new Date()
@@ -55,10 +55,11 @@ android {
     }
 
     applicationVariants.all { variant ->
-        variant.outputs.each { output ->
+        final def each = variant.outputs.each { output ->
             output.outputFile = new File(output.outputFile.parent, output.outputFile.name.
                     replace(".apk", "_" + versionName + "_" + versionCode + "_" + getDate() + ".apk"));
         }
+        each
     }
 
 }
@@ -66,6 +67,8 @@ android {
 ext {
     // Android Support AppCompat
     supportLibVersion = '24.2.1'
+    // Dagger
+    daggerLibVersion = '2.7'
     // Butter Knife
     butterknifeLibVersion = '8.1.0'
     // Fonts Support
@@ -81,6 +84,9 @@ dependencies {
     compile "com.android.support:support-v4:${supportLibVersion}"
     compile "com.android.support:cardview-v7:${supportLibVersion}"
     compile "com.android.support:recyclerview-v7:${supportLibVersion}"
+    //
+    compile "com.google.dagger:dagger:${daggerLibVersion}"
+    apt "com.google.dagger:dagger-compiler:${daggerLibVersion}"
     // Butter Knife
     compile "com.jakewharton:butterknife:${butterknifeLibVersion}"
     apt "com.jakewharton:butterknife-compiler:${butterknifeLibVersion}"

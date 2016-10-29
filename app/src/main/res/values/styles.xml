@@ -6,10 +6,28 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="CustomTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="ColoredBillsEditTextTheme" parent="ThemeOverlay.AppCompat">
+        <!-- Used for the bottom line when not selected / focused -->
+        <item name="colorControlNormal">@color/white</item>
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- colorControlActivated & colorControlHighlight use the colorAccent color by default -->
     </style>
 
     <style name="AppBaseTheme" parent="AppTheme">
 
     </style>
+
 
 </resources>
